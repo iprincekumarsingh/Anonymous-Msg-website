@@ -63,51 +63,49 @@
 
     <!-- <button style="width: 400px;" class="btn custombtn btn-outline-info"><a href="#viewmsg"></a>Setting</button>
     <button style="width: 400px;" class="btn custombtn btn-outline-danger"><a href="#viewmsg"></a>Delete Account</button> -->
-<?php
-  if(isset($_SESSION['isLoggedIn']))
-  {
-
-  }
-  else{
+    <?php
+    if (isset($_SESSION['isLoggedIn'])) {
+    } else {
     ?>
- <form action="includes/msgController.php" method="post">
-      <div class="mb-3">
-
-
-        <label for="exampleFormControlInput1" class="form-label">Enter your name</label>
-        <input type="text" class="form-control" name="msg" id="exampleFormControlInput1" placeholder="SRK">
-
-        <input class="btn btn-primary mt-3" type="submit" name="submit" value="Send">
-      </div>
-
-    </form>
- <?php }
-?>
-
-   
-    <div class="msggot">
-      <?php if (isset($_SESSION['isLoggedIn'])) {
-      ?>
+      <form action="includes/msgController.php" method="post">
         <div class="mb-3">
 
 
           <label for="exampleFormControlInput1" class="form-label">Enter your name</label>
-          <input type="text" style="width: 600px;" class="form-control" value="<?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-                                                            $link = "https";
-                                                          else  $link = "http";
+          <input type="text" class="form-control" name="msg" id="exampleFormControlInput1" placeholder="SRK">
 
-                                                          // Here append the common URL characters.
-                                                          $link .= "://";
-
-                                                          // Append the host(domain name, ip) to the URL.
-                                                          $link .= $_SERVER['HTTP_HOST'];
-
-                                                          // Append the requested resource location to the URL
-                                                       echo   $link .= $_SERVER['REQUEST_URI']."/id?=".$_SESSION['uname'] ; ?>" name="msg" id="exampleFormControlInput1" placeholder="SRK">
-
-          <input class="btn btn-primary mt-3" type="submit" name="submit" value="Copy">
+          <input class="btn btn-primary mt-3" type="submit" name="submit" value="Send">
         </div>
 
+      </form>
+    <?php }
+    ?>
+
+
+
+    <?php if (isset($_SESSION['isLoggedIn'])) {
+    ?>
+      <div class="mb-3">
+
+
+        <label for="exampleFormControlInput1" class="form-label">Enter your name</label>
+        <input type="text" style="width: 600px;" class="form-control" value="<?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+                                                                                $link = "https";
+                                                                              else  $link = "http";
+
+                                                                              // Here append the common URL characters.
+                                                                              $link .= "://";
+
+                                                                              // Append the host(domain name, ip) to the URL.
+                                                                              $link .= $_SERVER['HTTP_HOST'];
+
+                                                                              // Append the requested resource location to the URL
+                                                                              echo   $link .= "/secretmsg/msg.php" . "?id=" . $_SESSION['uname']; ?>" name="msg" id="exampleFormControlInput1" placeholder="SRK">
+
+        <input class="btn btn-primary mt-3" type="submit" name="submit" value="Copy">
+      </div>
+      <h1>INBOX</h1>
+      <div class="msggot">
 
         <?php include 'includes/server.php';
 
@@ -119,6 +117,7 @@
           $msg = $row['msg'];
 
         ?>
+
           <div id="seemsg" class="card" style="width: 18rem;">
             <div class="card-body">
               <p class="card-text"><?php echo $msg; ?></p>
@@ -126,15 +125,11 @@
               <a href="#" class=" btn btn-outline-danger card-link">Delete</a>
             </div>
           </div>
+
       <?php     }
       }
       ?>
-
-
-
-
-
-    </div>
+      </div>
   </div>
 
 

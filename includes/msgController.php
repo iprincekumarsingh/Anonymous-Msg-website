@@ -1,6 +1,13 @@
 <?php
-
-saveMsg();
+if(isset($_POST['submit'])){
+    saveMsg();
+}
+if(isset($_POST['msgsend'])){
+    include 'server.php';
+    $umsg = $_POST['msg'];
+    $id= $_POST['id'];
+    usermsgsave($id,$umsg,$conn);
+}
 function saveMsg()
 {
 
@@ -42,8 +49,12 @@ function usercreation($username, $userpassword, $conn, $msg)
         // usermsgsave($username, $msg, $conn);
     }
 }
+
 function usermsgsave($username, $msg, $conn)
 {
     $msgInsertQuery = "INSERT INTO msgs (username,msg)VALUES('{$username}','{$msg}')";
     $msgquery = mysqli_query($conn, $msgInsertQuery) or die(mysqli_error($conn));
+    if($msgquery){
+        echo 'Success';
+    }
 }

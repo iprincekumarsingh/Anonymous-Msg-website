@@ -56,5 +56,6 @@ function usermsgsave($username, $msg, $conn)
     $msgquery = mysqli_query($conn, $msgInsertQuery) or die(mysqli_error($conn));
     if($msgquery){
         echo 'Success';
+        header('location:../home.php');
     }
 }

@@ -1,0 +1,104 @@
+body{
+ background: linear-gradient(to left,#DB0B5F, #6F00ED);
+    color: #CAD5E2;
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    border-bottom: 1px solid grey;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: #b310b3;
+}
+.logo{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 900;
+}
+.last{
+    /* color: rgb(70, 69, 69); */
+    font-weight: 900;
+}
+nav ul li{
+    display: inline-block;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: #CAD5E2;
+    font-size: 16px;
+    margin: 10px;
+    transition: .5s;
+    
+}
+nav ul li a:hover{
+    color: aquamarine;
+    font-size: 21px;
+}
+.main{
+    margin: 10px;
+}
+.name_form{
+  
+    width: 300px;
+    /* background-color: blue; */
+    height: 100px;
+    /* padding: 20px; */
+
+    /* margin: 10px auto; */
+}
+input{
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: none;
+    font-size: 18px;
+    border: 1px solid #FFF;
+
+    background: none;
+    outline: none;
+    color: #CAD5E2;
+    border-radius: 5px;
+}
+
+input::-ms-value{
+    margin-right: 10px;
+}
+input::placeholder{
+    color: #CAD5E2;
+    font-size: 18px;    
+}
+.btn{
+    margin-top: 10px;
+    width: 100px;
+    border: 1px solid burlywood;
+}
+.box-model{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    
+  
+  
+
+    
+}
+
+.box{
+    padding: 10px;
+    text-align: center;
+    text-decoration: ;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: 1px solid rgb(236, 236, 236);
+    width: 300px;
+    word-break: break-all;
+    word-wrap: normal;
+    min-height: 100px;
+ 
+}
